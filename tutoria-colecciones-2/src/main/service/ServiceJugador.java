@@ -9,7 +9,7 @@ import main.utility.Comparators;
 
 public class ServiceJugador {
     
-    Scanner scanner = new Scanner(System.in).useDelimiter("\n").useLocale(Locale.US);
+    private Scanner scanner = new Scanner(System.in).useDelimiter("\n").useLocale(Locale.US);
     
     /* Creamos una lista de jugadores, los cuales se ingresan en el
      * método crearJugador(), y preguntamos si queremos seguir ingresando
