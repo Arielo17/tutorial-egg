@@ -8,22 +8,22 @@ public class Main {
     
     public static void main(String[] args) {
         
-        ServiceJugador sj = new ServiceJugador();
-        ArrayList jugadores = sj.crearListaJugadores();
-        sj.mostrarLista(jugadores);
+        ServiceJugador servicioJugador = new ServiceJugador();
+        ArrayList jugadores = servicioJugador.crearListaJugadores();
+        servicioJugador.mostrarLista(jugadores);
         
         // Eliminamos un jugador de la lista
-        sj.eliminarJugador(jugadores);
-        sj.mostrarLista(jugadores);
+        servicioJugador.eliminarJugador(jugadores);
+        servicioJugador.mostrarLista(jugadores);
         
         //Ordenar
         System.out.println("\nOrdenamos por Nacionalidad: ");
-        sj.ordenarNacionalidad(jugadores);
+        servicioJugador.ordenarNacionalidad(jugadores);
         
         System.out.println("\nOrdenamos por Edad: ");
-        sj.ordenarEdad(jugadores);
+        servicioJugador.ordenarEdad(jugadores);
         
         System.out.println("\nOrdenamos por Altura: ");
-        sj.ordenarAltura(jugadores);
+        servicioJugador.ordenarAltura(jugadores);
     }
 }
