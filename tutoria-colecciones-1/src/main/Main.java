@@ -12,7 +12,7 @@ public class Main {
         ArrayList<String> alfabeto = new ArrayList();
         
         // Ingreso de datos
-            // Ingresamos los datos con add()
+        // Ingresamos los datos con add()
         alfabeto.add("a");
         alfabeto.add("b");
         alfabeto.add("b");
@@ -22,13 +22,13 @@ public class Main {
         System.out.println("Datos ingresados:");
         
         // Recorrer un ArrayList
-            // forEach
+        // forEach
         for (String aux : alfabeto){
             System.out.print(aux + " ");
         }
         System.out.println("\n-----");
         
-            // otra forma de ingresar un dato es a traves de la posición
+        // otra forma de ingresar un dato es a traves de la posición
         alfabeto.add(2,"g");
         
         for (String aux : alfabeto){
@@ -37,7 +37,7 @@ public class Main {
         System.out.println("\n-----");
         
         // Eliminar elementos
-            // Por medio del índice
+        // Por medio del índice
         alfabeto.remove(5);
         
         System.out.println("Removemos por índice:");
@@ -46,7 +46,7 @@ public class Main {
         }
         System.out.println("\n-----");
         
-            // Por elemento
+        // Por elemento
         alfabeto.remove("b");
         
         System.out.println("Removemos por elemento:");
@@ -55,10 +55,8 @@ public class Main {
         }
         System.out.println("\n-----");
         
-        
-        
-            // Iterator
-        Iterator itAlfabeto = alfabeto.iterator();
+        // Iterator
+        Iterator<String> itAlfabeto = alfabeto.iterator();
         while(itAlfabeto.hasNext()){
             if(itAlfabeto.next().equals("e")){
                 itAlfabeto.remove();

@@ -10,16 +10,11 @@ import main.utility.Comparators;
 public class ServiceJugador {
     
     Scanner scanner = new Scanner(System.in).useDelimiter("\n").useLocale(Locale.US);
-    Iterator itJugadores;
     
-    /**
-     * Creamos una lista de jugadores, los cuales se ingresan en el
+    /* Creamos una lista de jugadores, los cuales se ingresan en el
      * método crearJugador(), y preguntamos si queremos seguir ingresando
-     * más jugadores.
-     * 
-     * @return lista 'jugadores' de tipo 'Jugador'
-     */
-    public ArrayList<Jugador> crearArrayJugadores(){
+     * más jugadores.*/
+    public ArrayList<Jugador> crearListaJugadores(){
         
         ArrayList<Jugador> jugadores = new ArrayList<>();
         String opcion = "s";
@@ -35,12 +30,8 @@ public class ServiceJugador {
         return jugadores;
     }
     
-    /**
-     * Pedimos al usuario que ingrese cada uno de los parámetros que serán 
-     * guardados en el objeto 'jugador'.
-     * 
-     * @return 'jugador' de tipo 'Jugador'
-     */
+    /* Pedimos al usuario que ingrese cada uno de los parámetros que serán 
+     * guardados en el objeto 'jugador'.*/
     public Jugador crearJugador(){
         Jugador jugador = new Jugador();
         
@@ -58,25 +49,18 @@ public class ServiceJugador {
         return jugador;
     }
     
-    /**
-     * Muestra los objetos juardados en la lista.
-     * 
-     * @param jugadores 
-     */
-    public void mostrarArray(ArrayList<Jugador> jugadores){
-        
+    /* Muestra los objetos juardados en la lista.*/
+    public void mostrarLista(ArrayList<Jugador> jugadores){
+        System.out.println("NOMBRE\tEDAD\tALTURA\tPESO\tNACIONALIDAD");
+        Iterator<Jugador> itJugadores;
         itJugadores = jugadores.iterator();
         while(itJugadores.hasNext()){
             System.out.println(itJugadores.next());
         }
     }
     
-    /**
-     * Pide al usuario que ingrese el nombre de un jugador, si está
-     * en la lista lo elimina y sino envía un mensaje.
-     * 
-     * @param jugadores 
-     */
+    /* Pide al usuario que ingrese el nombre de un jugador, si está
+     * en la lista lo elimina y sino envía un mensaje.*/
     public void eliminarJugador(ArrayList<Jugador> jugadores){
         System.out.print("\nIngrese el nombre del jugador a eliminar: ");
         String eliminar = scanner.next();
@@ -88,37 +72,25 @@ public class ServiceJugador {
             }
         }
         if(!encontro){
-            System.out.println("El jugador no se encuentra en la lista");
+            System.out.println("El jugador no se encuentra en la lista\n");
         }
     }
     
-    /**
-     * Ordena la lista alfabeticamente según nacionalidad.
-     * 
-     * @param jugadores 
-     */
+    /* Ordena la lista alfabeticamente según nacionalidad.*/
     public void ordenarNacionalidad(ArrayList<Jugador> jugadores){
         jugadores.sort(Comparators.compareNacionalidad);
-        mostrarArray(jugadores);
+        mostrarLista(jugadores);
     }
     
-    /**
-     * Ordena la lista de menor edad a mayor edad.
-     * 
-     * @param jugadores 
-     */
+    /* Ordena la lista de menor edad a mayor edad.*/
     public void ordenarEdad(ArrayList<Jugador> jugadores){
         jugadores.sort(Comparators.comparaEdad);
-        mostrarArray(jugadores);
+        mostrarLista(jugadores);
     }
     
-    /**
-     * Ordena la lista de más alto a más bajo.
-     * 
-     * @param jugadores 
-     */
+    /* Ordena la lista de más alto a más bajo.*/
     public void ordenarAltura(ArrayList<Jugador> jugadores){
         jugadores.sort(Comparators.comparaAltura);
-        mostrarArray(jugadores);
+        mostrarLista(jugadores);
     }
 }
