@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         
         ServiceJugador servicioJugador = new ServiceJugador();
-        ArrayList jugadores = servicioJugador.crearListaJugadores();
+        ArrayList<Jugador> jugadores = servicioJugador.crearListaJugadores();
         servicioJugador.mostrarLista(jugadores);
         
         // Eliminamos un jugador de la lista

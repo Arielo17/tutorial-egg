@@ -9,7 +9,11 @@ import main.utility.Comparators;
 
 public class ServiceJugador {
     
-    private Scanner scanner = new Scanner(System.in).useDelimiter("\n").useLocale(Locale.US);
+    private final Scanner scanner;
+
+    public ServiceJugador() {
+        this.scanner = new Scanner(System.in).useDelimiter("\n").useLocale(Locale.US);
+    }
     
     /* Creamos una lista de jugadores, los cuales se ingresan en el
      * método crearJugador(), y preguntamos si queremos seguir ingresando
@@ -52,10 +56,8 @@ public class ServiceJugador {
     /* Muestra los objetos juardados en la lista.*/
     public void mostrarLista(ArrayList<Jugador> jugadores){
         System.out.println("NOMBRE\tEDAD\tALTURA\tPESO\tNACIONALIDAD");
-        Iterator<Jugador> itJugadores;
-        itJugadores = jugadores.iterator();
-        while(itJugadores.hasNext()){
-            System.out.println(itJugadores.next());
+        for(Jugador aux : jugadores){
+            System.out.println(aux.toString());
         }
     }
     
@@ -65,9 +67,10 @@ public class ServiceJugador {
         System.out.print("\nIngrese el nombre del jugador a eliminar: ");
         String eliminar = scanner.next();
         boolean encontro = false;
-        for (int i = 0; i < jugadores.size(); i++) {
-            if(jugadores.get(i).getNombre().equalsIgnoreCase(eliminar)){
-                jugadores.remove(i);
+        Iterator<Jugador> itJugadores = jugadores.iterator();
+        while(itJugadores.hasNext()){
+            if(itJugadores.next().getNombre().equalsIgnoreCase(eliminar)){
+                itJugadores.remove();
                 encontro = true;
             }
         }
